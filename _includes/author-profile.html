@@ -20,7 +20,7 @@
     <h3 class="author__name" itemprop="name">{{ author.name }}</h3>
     {% if author.bio %}<p class="author__bio" itemprop="jobTitle">{{ author.bio }}</p>{% endif %}
     {% if author.employer or author.location %}
-      <p class="author__affiliation">{% if author.employer %}<span itemprop="affiliation">{{ author.employer }}</span>{% endif %}{% if author.employer and author.location %} · {% endif %}{% if author.location %}<span itemprop="homeLocation">{{ author.location }}</span>{% endif %}</p>
+      <p class="author__affiliation">{% if author.employer %}<span class="nowrap" itemprop="affiliation">{{ author.employer }}</span>{% endif %}{% if author.employer and author.location %} · {% endif %}{% if author.location %}<span class="nowrap" itemprop="homeLocation">{{ author.location }}</span>{% endif %}</p>
     {% endif %}
   </div>
 
