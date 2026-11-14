@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a doctoral researcher and research assistant at the Institute for Accounting and Control at LMU Munich, affiliated with TRR 266 *Accounting for Transparency*.
+I am a doctoral researcher at the Institute for Accounting and Control at LMU Munich and a member of [TRR 266 Accounting for Transparency](https://www.accounting-for-transparency.de/).
 
 My research interests include corporate governance, sustainability, corporate disclosure, and capital markets.
 
