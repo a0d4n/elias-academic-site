@@ -1,6 +1,6 @@
 
 ---
-permalink: /
+permalink: /index.html
 title: "About"
 author_profile: true
 redirect_from:
