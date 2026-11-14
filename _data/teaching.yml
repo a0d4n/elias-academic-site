@@ -18,8 +18,16 @@ courses:
     institution: "LMU Munich School of Management"
     with: "Prof. Dr. Christian Hofmann and Anna Kölle"
 
-# Thesis supervision or advising (shown under its own heading).
-# Fields: text (required), url (optional)
+# Thesis supervision (shown under its own heading).
+# Fields: text (required), links (optional list of label/url pairs)
 theses:
-  - text: "Contact for bachelor's and master's theses on AI in Finance written in cooperation with Knorr-Bremse AG"
-    url: "https://www.som.lmu.de/iuc/en/teaching/theses/"
+  - text: "Supervision of bachelor's and master's theses at the Institute for Accounting and Control, in the institute's research areas, including executive compensation, corporate governance, sustainability (ESG) and transparency regulation."
+    links:
+      - label: "Application process"
+        url: "https://www.som.lmu.de/iuc/en/teaching/theses/"
+      - label: "Topic pool (PDF)"
+        url: "https://cms-cdn.lmu.de/media/04-som/iuc/downloads/themenpool_09feb2026_english.pdf"
+  - text: "Contact for theses on AI in Finance written in cooperation with Knorr-Bremse AG."
+    links:
+      - label: "Details"
+        url: "https://www.som.lmu.de/iuc/en/teaching/theses/"

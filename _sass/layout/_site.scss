@@ -253,6 +253,12 @@ a {
   color: var(--global-text-color);
 }
 
+.paper--compact { margin-bottom: $sp-3; }
+
+.page__content .paper__byline--after {
+  margin: $sp-1 0 0;
+}
+
 .page__content .paper--project .paper__byline {
   margin-bottom: $sp-2;
 }

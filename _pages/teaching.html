@@ -26,9 +26,12 @@ permalink: /teaching/
 
 {% if t.theses.size > 0 %}
 <section>
-<h2 class="section-label">Theses</h2>
+<h2 class="section-label">Thesis Supervision</h2>
 {% for s in t.theses %}
-<p>{{ s.text }}{% if s.url %} — <a href="{{ s.url }}">details</a>{% endif %}</p>
+<article class="paper paper--compact">
+  <p class="paper__text">{{ s.text }}</p>
+  {% if s.links %}<p class="paper__byline paper__byline--after">{% for l in s.links %}<a class="paper__link" href="{{ l.url }}">{{ l.label }}</a>{% unless forloop.last %}<span class="paper__sep" aria-hidden="true">·</span>{% endunless %}{% endfor %}</p>{% endif %}
+</article>
 {% endfor %}
 </section>
 {% endif %}
