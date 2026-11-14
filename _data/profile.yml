@@ -12,6 +12,9 @@ research_interests:
 
 # Fields: years, degree, institution, note (optional)
 education:
+  - years: "Since 2026"
+    degree: "Doctoral Studies in Accounting and Control"
+    institution: "LMU Munich School of Management"
   - years: "2024–2026"
     degree: "MSc in Finance"
     institution: "Frankfurt School of Finance & Management"
