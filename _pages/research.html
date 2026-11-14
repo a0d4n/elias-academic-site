@@ -6,7 +6,7 @@ permalink: /research/
   Content is maintained in _data/research.yml — edit that file, not this one.
 {% endcomment %}
 {% assign r = site.data.research %}
-{% assign total = r.working_papers.size | plus: r.work_in_progress.size | plus: r.publications.size | plus: r.projects.size | plus: r.presentations.size %}
+{% assign total = r.working_papers.size | plus: r.work_in_progress.size | plus: r.publications.size | plus: r.projects.size | plus: r.theses.size | plus: r.presentations.size %}
 
 {% if r.publications.size > 0 %}
 <h2>Publications</h2>
@@ -31,6 +31,11 @@ permalink: /research/
   {% if p.description %}<p class="entry__summary">{{ p.description }}</p>{% endif %}
 </div>
 {% endfor %}
+{% endif %}
+
+{% if r.theses.size > 0 %}
+<h2>Master's Thesis</h2>
+{% for e in r.theses %}{% include research-entry.html entry=e %}{% endfor %}
 {% endif %}
 
 {% if r.presentations.size > 0 %}
