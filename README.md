@@ -11,7 +11,7 @@ All edits can be made in the GitHub website: open a file, click the pencil icon,
 | What | File |
 |---|---|
 | About: opening paragraph | `index.html` |
-| About: interests, education, experience | `_data/profile.yml` |
+| About: research interests, personal line | `_data/profile.yml` |
 | Sidebar: name, title, affiliation, links | `author:` block in `_config.yml` |
 | Profile photo | `images/Elias.jpg` (replace the file, keep the name) |
 | Research page | `_data/research.yml` |

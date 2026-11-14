@@ -5,11 +5,11 @@ permalink: /
 author_profile: true
 ---
 {% comment %}
-  The opening paragraph is below. Everything else on this page
-  (interests, education, experience) is edited in _data/profile.yml.
+  The opening paragraph is below. Research interests and the
+  "Beyond Research" line are edited in _data/profile.yml.
 {% endcomment %}
 {% assign pr = site.data.profile %}
-<p class="page__intro">I am a doctoral candidate at the Institute for Accounting and Control (Prof. Dr. Christian Hofmann) at LMU Munich and a member of <a href="https://www.accounting-for-transparency.de/">TRR 266 Accounting for Transparency</a>.</p>
+<p class="page__intro">I am a doctoral candidate at the Institute for Accounting and Control (Prof. Dr. Christian Hofmann) at LMU Munich and a member of <a href="https://www.accounting-for-transparency.de/">TRR 266 Accounting for Transparency</a>. Before joining LMU, I completed an MSc in Finance and a BSc in Business Administration at Frankfurt School of Finance &amp; Management.</p>
 
 {% if pr.research_interests.size > 0 %}
 <section>
@@ -17,41 +17,6 @@ author_profile: true
 <ul class="interest-list">
 {% for i in pr.research_interests %}  <li>{{ i }}</li>
 {% endfor %}</ul>
-</section>
-{% endif %}
-
-{% if pr.education.size > 0 %}
-<section>
-<h2 class="section-label">Education</h2>
-<ul class="dated-list">
-{% for ed in pr.education %}
-  <li class="dated-list__item">
-    <span class="dated-list__date">{{ ed.years }}</span>
-    <div class="dated-list__main">
-      <p class="dated-list__title">{{ ed.degree }}</p>
-      <p class="dated-list__sub">{{ ed.institution }}</p>
-      {% if ed.note %}<p class="dated-list__sub">{{ ed.note }}</p>{% endif %}
-    </div>
-  </li>
-{% endfor %}
-</ul>
-</section>
-{% endif %}
-
-{% if pr.experience.size > 0 %}
-<section>
-<h2 class="section-label">Professional Experience</h2>
-<ul class="dated-list">
-{% for x in pr.experience %}
-  <li class="dated-list__item">
-    <span class="dated-list__date">{{ x.years }}</span>
-    <div class="dated-list__main">
-      <p class="dated-list__title">{{ x.organisation }}</p>
-      <p class="dated-list__sub">{{ x.role }}</p>
-    </div>
-  </li>
-{% endfor %}
-</ul>
 </section>
 {% endif %}
 

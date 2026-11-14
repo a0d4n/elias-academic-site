@@ -10,33 +10,5 @@ research_interests:
   - Corporate disclosure
   - Capital markets
 
-# Fields: years, degree, institution, note (optional)
-education:
-  - years: "Since 2026"
-    degree: "Doctoral Studies in Accounting and Control"
-    institution: "LMU Munich School of Management"
-  - years: "2024–2026"
-    degree: "MSc in Finance"
-    institution: "Frankfurt School of Finance & Management"
-  - years: "2020–2024"
-    degree: "BSc in Business Administration"
-    institution: "Frankfurt School of Finance & Management"
-    note: "Semester abroad at Dublin Business School, 2022"
-
-# Fields: years, role, organisation
-experience:
-  - years: "2024–2025"
-    role: "Working Student, Corporate Office"
-    organisation: "Deutsche Börse"
-  - years: "2024"
-    role: "Intern, Business Development"
-    organisation: "Metzler Asset Management"
-  - years: "2023–2024"
-    role: "Working Student, Securities Trading"
-    organisation: "Baader Bank"
-  - years: "2020–2022"
-    role: "Working Student, Audit"
-    organisation: "Verband der Sparda-Banken"
-
 # One short paragraph shown under "Beyond Research"
 beyond_research: "I follow debates on Germany's competitiveness, economic growth and liberalism. In my free time, I enjoy tennis and rowing."
