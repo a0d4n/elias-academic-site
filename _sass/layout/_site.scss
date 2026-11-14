@@ -33,11 +33,9 @@ $sp-5: 3rem;
   --site-muted: #6b7480;
 }
 
+/* One fixed base size: text never changes size with the window width */
 html {
-  font-size: 15px;
-
-  @include breakpoint($medium) { font-size: 16px; }
-  @include breakpoint($x-large) { font-size: 17px; }
+  font-size: 16px;
 }
 
 body {
@@ -220,11 +218,7 @@ a {
   }
 }
 
-.page__content .page__lead-note {
-  margin-bottom: $sp-4;
-  color: var(--site-muted);
-  font-size: $fs-body;
-}
+
 
 /* Section label: small capitals with a single hairline */
 .page__content .section-label,
