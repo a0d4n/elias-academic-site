@@ -7,7 +7,8 @@
 # Fields (only "title" is required):
 #   title:     paper title
 #   coauthors: "with Jane Doe and John Smith"
-#   status:    e.g. "Working paper", "Revise & resubmit at …", journal name
+#   status:    short tag, e.g. "Revise & resubmit", "Master's thesis"
+#   venue:     journal, institution or series, e.g. "Journal of Finance"
 #   year:      2027
 #   abstract:  shown in a collapsible "Abstract" box
 #   links:     list of label/url pairs. A file you upload to /files/ is
@@ -45,17 +46,19 @@ work_in_progress:
 publications: []
 
 # Research projects (e.g. funded projects Elias works on).
-# Fields: title, description, url (optional)
+# Fields: title, label (small caption above the title), description, url (optional)
 projects:
   - title: "Transparency Regulation and Organizational Design"
-    description: "Project B03 of TRR 266 Accounting for Transparency, funded by the German Research Foundation (DFG). Principal investigators: Christian Hofmann (LMU Munich) and Nina Schwaiger (TU Darmstadt)."
+    label: "TRR 266 Accounting for Transparency · Project B03"
+    description: "Funded by the German Research Foundation (DFG). Principal investigators: Christian Hofmann (LMU Munich) and Nina Schwaiger (TU Darmstadt)."
     url: "https://www.accounting-for-transparency.de/projects/transparency-regulation-and-organizational-design/"
 
 # Theses (same fields as papers)
 theses:
   - title: "Turning Bad News into Alpha: Passive Exclusion Rules after Goodwill Impairments in the U.S. and Germany, 2005–2025"
     coauthors: "Supervised by Dr. María de la O Hervás Zurita and Prof. Dr. Martin Hellmich"
-    status: "Master's thesis, Frankfurt School of Finance & Management"
+    status: "Master's thesis"
+    venue: "Frankfurt School of Finance & Management"
     year: 2026
     abstract: >
       This thesis examines whether goodwill impairment announcements have

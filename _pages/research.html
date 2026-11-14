@@ -9,44 +9,75 @@ permalink: /research/
 {% assign total = r.working_papers.size | plus: r.work_in_progress.size | plus: r.publications.size | plus: r.projects.size | plus: r.theses.size | plus: r.presentations.size %}
 
 {% if r.publications.size > 0 %}
-<h2>Publications</h2>
-{% for e in r.publications %}{% include research-entry.html entry=e %}{% endfor %}
+<section>
+<h2 class="section-label">Publications</h2>
+{% for e in r.publications %}{% include research-entry.html entry=e section="pub" index=forloop.index %}{% endfor %}
+</section>
 {% endif %}
 
 {% if r.working_papers.size > 0 %}
-<h2>Working Papers</h2>
-{% for e in r.working_papers %}{% include research-entry.html entry=e %}{% endfor %}
+<section>
+<h2 class="section-label">Working Papers</h2>
+{% for e in r.working_papers %}{% include research-entry.html entry=e section="wp" index=forloop.index %}{% endfor %}
+</section>
 {% endif %}
 
 {% if r.work_in_progress.size > 0 %}
-<h2>Work in Progress</h2>
-{% for e in r.work_in_progress %}{% include research-entry.html entry=e %}{% endfor %}
-{% endif %}
-
-{% if r.projects.size > 0 %}
-<h2>Research Projects</h2>
-{% for p in r.projects %}
-<div class="entry">
-  <p class="entry__title">{% if p.url %}<a href="{{ p.url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</p>
-  {% if p.description %}<p class="entry__summary">{{ p.description }}</p>{% endif %}
-</div>
-{% endfor %}
+<section>
+<h2 class="section-label">Work in Progress</h2>
+{% for e in r.work_in_progress %}{% include research-entry.html entry=e section="wip" index=forloop.index %}{% endfor %}
+</section>
 {% endif %}
 
 {% if r.theses.size > 0 %}
-<h2>Master's Thesis</h2>
-{% for e in r.theses %}{% include research-entry.html entry=e %}{% endfor %}
+<section>
+<h2 class="section-label">Master's Thesis</h2>
+{% for e in r.theses %}{% include research-entry.html entry=e section="thesis" index=forloop.index %}{% endfor %}
+</section>
+{% endif %}
+
+{% if r.projects.size > 0 %}
+<section>
+<h2 class="section-label">Research Projects</h2>
+{% for p in r.projects %}
+<div class="project">
+  {% if p.label %}<p class="project__label">{{ p.label }}</p>{% endif %}
+  <h3 class="project__title">{% if p.url %}<a href="{{ p.url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h3>
+  {% if p.description %}<p class="project__text">{{ p.description }}</p>{% endif %}
+</div>
+{% endfor %}
+</section>
 {% endif %}
 
 {% if r.presentations.size > 0 %}
-<h2>Presentations</h2>
-<ul class="entry-list">
+<section>
+<h2 class="section-label">Presentations</h2>
+<ul class="dated-list">
 {% for p in r.presentations %}
-  <li>{% if p.title %}<em>{{ p.title }}</em>, {% endif %}{% if p.url %}<a href="{{ p.url }}">{{ p.event }}</a>{% else %}{{ p.event }}{% endif %}{% if p.location %}, {{ p.location }}{% endif %}{% if p.date %} ({{ p.date }}){% endif %}</li>
+  <li class="dated-list__item">
+    <span class="dated-list__date">{{ p.date }}</span>
+    <div class="dated-list__main">
+      <p class="dated-list__title">{% if p.url %}<a href="{{ p.url }}">{{ p.event }}</a>{% else %}{{ p.event }}{% endif %}</p>
+      {% if p.location %}<p class="dated-list__sub">{{ p.location }}</p>{% endif %}
+      {% if p.title %}<p class="dated-list__note">{{ p.title }}</p>{% endif %}
+    </div>
+  </li>
 {% endfor %}
 </ul>
+</section>
 {% endif %}
 
 {% if total == 0 %}
-<p>Working papers, publications and conference presentations will be listed here.</p>
+<p class="muted">Working papers, publications and conference presentations will be listed here.</p>
 {% endif %}
+
+<script>
+  document.querySelectorAll('.js-abstract').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var panel = document.getElementById(btn.getAttribute('aria-controls'));
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      panel.hidden = open;
+    });
+  });
+</script>

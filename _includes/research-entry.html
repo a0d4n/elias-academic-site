@@ -1,19 +1,15 @@
-{% include base_path %}
-{% assign e = include.entry %}
-<div class="entry">
-  <p class="entry__title">{{ e.title }}</p>
-  {% capture meta %}{% if e.coauthors %}{{ e.coauthors }}{% endif %}{% if e.status %}{% if e.coauthors %} · {% endif %}<em>{{ e.status }}</em>{% endif %}{% if e.year %}{% if e.coauthors or e.status %} · {% endif %}{{ e.year }}{% endif %}{% endcapture %}
-  {% assign meta = meta | strip %}
-  {% if meta != "" %}<p class="entry__meta">{{ meta }}</p>{% endif %}
-  {% if e.abstract %}
-    <details class="entry__abstract">
-      <summary>Abstract</summary>
-      {{ e.abstract | markdownify }}
-    </details>
+{% include base_path %}{% assign e = include.entry %}{% capture pid %}{{ include.section }}-{{ include.index }}{% endcapture %}
+<article class="paper">
+  <h3 class="paper__title">{{ e.title }}</h3>
+  {% if e.coauthors %}<p class="paper__authors">{{ e.coauthors }}</p>{% endif %}
+  {% if e.status or e.venue or e.year %}
+  <p class="paper__meta">{% if e.status %}<span class="tag">{{ e.status }}</span>{% endif %}{% if e.venue or e.year %}<span>{{ e.venue }}{% if e.venue and e.year %}, {% endif %}{{ e.year }}</span>{% endif %}</p>
   {% endif %}
-  {% if e.links %}
-    <p class="entry__links">
-      {% for l in e.links %}{% if l.url contains "://" %}{% assign href = l.url %}{% else %}{% assign href = l.url | prepend: base_path %}{% endif %}<a href="{{ href }}">{{ l.label }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}
-    </p>
+  {% if e.abstract or e.links %}
+  <div class="paper__actions">
+    {% if e.abstract %}<button type="button" class="pill js-abstract" aria-expanded="false" aria-controls="abstract-{{ pid }}"><span class="pill__icon" aria-hidden="true">&#9656;</span>Abstract</button>{% endif %}
+    {% for l in e.links %}{% if l.url contains "://" %}{% assign href = l.url %}{% else %}{% assign href = l.url | prepend: base_path %}{% endif %}<a class="pill" href="{{ href }}">{{ l.label }}</a>{% endfor %}
+  </div>
   {% endif %}
-</div>
+  {% if e.abstract %}<div class="paper__abstract" id="abstract-{{ pid }}" hidden>{{ e.abstract | markdownify }}</div>{% endif %}
+</article>

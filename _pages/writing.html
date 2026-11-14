@@ -12,16 +12,18 @@ redirect_from:
 
 {% assign pieces = site.data.writing | sort: "date" | reverse %}
 {% if pieces.size > 0 %}
-<div class="opinions">
+<ul class="dated-list">
 {% for p in pieces %}
   {% if p.url contains "://" %}{% assign href = p.url %}{% elsif p.url %}{% assign href = p.url | prepend: base_path %}{% else %}{% assign href = nil %}{% endif %}
-  <div class="entry">
-    <p class="entry__title">{% if href %}<a href="{{ href }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</p>
-    <p class="entry__meta">{% if p.outlet %}<em>{{ p.outlet }}</em> · {% endif %}{{ p.date | date: "%B %Y" }}</p>
-    {% if p.summary %}<p class="entry__summary">{{ p.summary }}</p>{% endif %}
-  </div>
+  <li class="dated-list__item">
+    <span class="dated-list__date">{{ p.date | date: "%B %Y" }}</span>
+    <div class="dated-list__main">
+      <p class="dated-list__title">{% if href %}<a href="{{ href }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</p>
+      {% if p.outlet or p.summary %}<p class="dated-list__sub">{% if p.outlet %}<em>{{ p.outlet }}</em>{% endif %}{% if p.outlet and p.summary %} · {% endif %}{{ p.summary }}</p>{% endif %}
+    </div>
+  </li>
 {% endfor %}
-</div>
+</ul>
 {% else %}
-<p>No pieces have been published here yet.</p>
+<p class="muted">No pieces have been published here yet.</p>
 {% endif %}

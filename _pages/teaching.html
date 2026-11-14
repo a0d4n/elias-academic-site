@@ -8,25 +8,31 @@ permalink: /teaching/
 {% assign t = site.data.teaching %}
 
 {% if t.courses.size > 0 %}
-<h2>Courses</h2>
+<section>
+<h2 class="section-label">Courses</h2>
+<ul class="dated-list">
 {% for c in t.courses %}
-<div class="entry">
-  <p class="entry__title">{% if c.url %}<a href="{{ c.url }}">{{ c.course }}</a>{% else %}{{ c.course }}{% endif %}</p>
-  <p class="entry__meta">{% if c.level %}{{ c.level }} · {% endif %}{% if c.role %}{{ c.role }} · {% endif %}{% if c.institution %}{{ c.institution }} · {% endif %}{{ c.term }}</p>
-  {% if c.with %}<p class="entry__summary">With {{ c.with }}</p>{% endif %}
-</div>
+  <li class="dated-list__item">
+    <span class="dated-list__date">{{ c.term }}</span>
+    <div class="dated-list__main">
+      <p class="dated-list__title">{% if c.url %}<a href="{{ c.url }}">{{ c.course }}</a>{% else %}{{ c.course }}{% endif %}</p>
+      <p class="dated-list__sub">{% if c.level %}{{ c.level }} · {% endif %}{% if c.role %}{{ c.role }} · {% endif %}{{ c.institution }}{% if c.with %}<br>With {{ c.with }}{% endif %}</p>
+    </div>
+  </li>
 {% endfor %}
+</ul>
+</section>
 {% endif %}
 
 {% if t.theses.size > 0 %}
-<h2>Theses</h2>
-<ul class="entry-list">
+<section>
+<h2 class="section-label">Theses</h2>
 {% for s in t.theses %}
-  <li>{% if s.url %}<a href="{{ s.url }}">{{ s.text }}</a>{% else %}{{ s.text }}{% endif %}</li>
+<p>{{ s.text }}{% if s.url %} — <a href="{{ s.url }}">details</a>{% endif %}</p>
 {% endfor %}
-</ul>
+</section>
 {% endif %}
 
 {% if t.courses.size == 0 and t.theses.size == 0 %}
-<p>Courses I teach will be listed here.</p>
+<p class="muted">Courses I teach will be listed here.</p>
 {% endif %}
