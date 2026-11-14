@@ -1,14 +1,16 @@
 ---
-title: "Political Opinions"
-permalink: /political-opinions/
+title: "Writing"
+permalink: /writing/
+redirect_from:
+  - /political-opinions/
 ---
 {% comment %}
-  Content is maintained in _data/opinions.yml — edit that file, not this one.
+  Content is maintained in _data/writing.yml — edit that file, not this one.
 {% endcomment %}
 {% include base_path %}
 <p class="page__lead-note">Articles, essays and commentary on politics and public affairs. These pieces reflect my personal views and are separate from my academic research.</p>
 
-{% assign pieces = site.data.opinions | sort: "date" | reverse %}
+{% assign pieces = site.data.writing | sort: "date" | reverse %}
 {% if pieces.size > 0 %}
 <div class="opinions">
 {% for p in pieces %}

@@ -14,7 +14,7 @@ All edits can be made in the GitHub website: open a file, click the pencil icon,
 | Sidebar: name, title, affiliation, links | `author:` block in `_config.yml` |
 | Profile photo | `images/Elias.jpg` (replace the file, keep the name) |
 | Research page | `_data/research.yml` |
-| Political Opinions page | `_data/opinions.yml` |
+| Writing page (articles, essays, commentary) | `_data/writing.yml` |
 | CV PDF | `files/Elias_Kuebler_CV.pdf` |
 | Navigation bar | `_data/navigation.yml` |
 
@@ -24,7 +24,7 @@ All edits can be made in the GitHub website: open a file, click the pencil icon,
 
 **Add a presentation or research project.** Same file, under `presentations:` (fields: `title`, `event`, `location`, `date`) or `projects:` (fields: `title`, `description`, `url`). When a work-in-progress paper becomes a working paper, move its entry from `work_in_progress:` to `working_papers:`.
 
-**Add an opinion piece.** Open `_data/opinions.yml` and add an entry with `title`, `outlet`, `date` (YYYY-MM-DD) and `url`. Entries are sorted newest first automatically.
+**Add an article or essay.** Open `_data/writing.yml` and add an entry with `title`, `outlet`, `date` (YYYY-MM-DD) and `url`. Entries are sorted newest first automatically.
 
 **Update the CV.** Upload the new PDF to `files/` with the name `Elias_Kuebler_CV.pdf`, replacing the old file. The download button on the CV page appears as soon as the file exists.
 
