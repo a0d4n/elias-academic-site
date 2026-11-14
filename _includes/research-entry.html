@@ -1,15 +1,14 @@
-{% include base_path %}{% assign e = include.entry %}{% capture pid %}{{ include.section }}-{{ include.index }}{% endcapture %}
+{% include base_path %}{% assign e = include.entry %}
 <article class="paper">
   <h3 class="paper__title">{{ e.title }}</h3>
-  {% if e.coauthors %}<p class="paper__authors">{{ e.coauthors }}</p>{% endif %}
-  {% if e.status or e.venue or e.year %}
-  <p class="paper__meta">{% if e.status %}<span class="tag">{{ e.status }}</span>{% endif %}{% if e.venue or e.year %}<span>{{ e.venue }}{% if e.venue and e.year %}, {% endif %}{{ e.year }}</span>{% endif %}</p>
+  <p class="paper__byline">{% if e.coauthors %}<span>{{ e.coauthors }}</span>{% endif %}{% if e.status or e.venue or e.year %}{% if e.coauthors %}<span class="paper__sep" aria-hidden="true">·</span>{% endif %}<span>{% if e.status %}{{ e.status }}{% if e.venue or e.year %}, {% endif %}{% endif %}{{ e.venue }}{% if e.venue and e.year %}, {% endif %}{{ e.year }}</span>{% endif %}{% for l in e.links %}{% if l.url contains "://" %}{% assign href = l.url %}{% else %}{% assign href = l.url | prepend: base_path %}{% endif %}<span class="paper__sep" aria-hidden="true">·</span><a class="paper__link" href="{{ href }}">{{ l.label }}</a>{% endfor %}</p>
+  {% if e.question or e.literature or e.data or e.method or e.findings %}
+  <dl class="paper__summary">
+    {% if e.question %}<dt>Question</dt><dd>{{ e.question }}</dd>{% endif %}
+    {% if e.literature %}<dt>Literature</dt><dd>{{ e.literature }}</dd>{% endif %}
+    {% if e.data %}<dt>Data</dt><dd>{{ e.data }}</dd>{% endif %}
+    {% if e.method %}<dt>Method</dt><dd>{{ e.method }}</dd>{% endif %}
+    {% if e.findings %}<dt>Findings</dt><dd>{{ e.findings }}</dd>{% endif %}
+  </dl>
   {% endif %}
-  {% if e.abstract or e.links %}
-  <div class="paper__actions">
-    {% if e.abstract %}<button type="button" class="pill js-abstract" aria-expanded="false" aria-controls="abstract-{{ pid }}"><span class="pill__icon" aria-hidden="true">&#9656;</span>Abstract</button>{% endif %}
-    {% for l in e.links %}{% if l.url contains "://" %}{% assign href = l.url %}{% else %}{% assign href = l.url | prepend: base_path %}{% endif %}<a class="pill" href="{{ href }}">{{ l.label }}</a>{% endfor %}
-  </div>
-  {% endif %}
-  {% if e.abstract %}<div class="paper__abstract" id="abstract-{{ pid }}" hidden>{{ e.abstract | markdownify }}</div>{% endif %}
 </article>

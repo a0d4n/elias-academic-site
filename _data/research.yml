@@ -2,48 +2,60 @@
 # RESEARCH — shown on the Research page
 # ==========================================
 # Each section is a list. A section that is empty ( [] ) is hidden.
-# To add an entry, replace [] with entries like the commented example.
 #
-# Fields (only "title" is required):
-#   title:     paper title
-#   coauthors: "with Jane Doe and John Smith"
-#   status:    short tag, e.g. "Revise & resubmit", "Master's thesis"
-#   venue:     journal, institution or series, e.g. "Journal of Finance"
-#   year:      2027
-#   abstract:  shown in a collapsible "Abstract" box
-#   links:     list of label/url pairs. A file you upload to /files/ is
-#              linked as /files/name.pdf; other links are full URLs.
+# Paper fields (only "title" is required):
+#   title:      paper title
+#   coauthors:  e.g. "with Jane Doe" (or "Supervised by …" for a thesis)
+#   status:     e.g. "Revise & resubmit", "Master's thesis"
+#   venue:      journal, institution or series
+#   year:       2027
+#   question:   research question, one sentence
+#   literature: literature it builds on, one sentence
+#   data:       data used, one sentence
+#   method:     methodology, one sentence
+#   findings:   main findings, one or two sentences
+#   links:      list of label/url pairs. Files uploaded to /files/ are
+#               linked as /files/name.pdf; other links are full URLs.
 #
 # Example (remove the # signs to use it):
 # working_papers:
 #   - title: "Paper title"
 #     coauthors: "with First Coauthor"
-#     status: "Working paper"
-#     year: 2027
-#     abstract: >
-#       One-paragraph abstract.
+#     question: "…"
+#     data: "…"
+#     method: "…"
+#     findings: "…"
 #     links:
-#       - label: "PDF"
-#         url: "/files/paper-name.pdf"
 #       - label: "SSRN"
 #         url: "https://papers.ssrn.com/..."
+
+publications: []
 
 working_papers: []
 
 work_in_progress:
   - title: "Overlapping Long-Term Incentives and the Lag in Strategic Realignment"
     coauthors: "with Karl Kappen"
-    abstract: >
-      Executives typically receive a new multi-year long-term incentive (LTI)
-      tranche every year, so several tranches with different performance
-      criteria are outstanding at the same time. Because existing tranches are
-      not rewritten after a strategic change, legacy tranches continue to reward
-      the old objectives. We model how these outstanding tranches delay the
-      realignment of managerial effort towards a new strategy, a Strategic
-      Incentive Lag, and plan to test the predictions using § 162 AktG
-      remuneration reports of DAX, MDAX and SDAX firms.
+    question: "How do legacy long-term incentive (LTI) tranches that are still outstanding delay the realignment of managerial effort after a strategic change?"
+    literature: "Agency theory and incentive contracting; the duration and vesting of executive pay."
+    data: "German remuneration reports under § 162 AktG for DAX, MDAX and SDAX firms around strategic changes (planned)."
+    method: "Present-value model of how executives allocate effort across overlapping LTI tranches, with simulations of behavioural and governance frictions."
+    findings: "Preliminary simulations: overlapping tranches delay the shift of effort to a new strategy, and the lag grows with tranche length and with frictions such as noisier new performance metrics."
 
-publications: []
+theses:
+  - title: "Turning Bad News into Alpha: Passive Exclusion Rules after Goodwill Impairments in the U.S. and Germany, 2005–2025"
+    coauthors: "Supervised by Dr. María de la O Hervás Zurita and Prof. Dr. Martin Hellmich"
+    status: "Master's thesis"
+    venue: "Frankfurt School of Finance & Management"
+    year: 2026
+    question: "Do goodwill impairment announcements have persistent capital market effects beyond the announcement window, and do these matter for passive index investors?"
+    literature: "Market efficiency and long-horizon event studies; goodwill impairment accounting under IAS 36 and U.S. GAAP."
+    data: "DAX and S&P 500 constituents, 2005–2025; impairment announcements and returns from Bloomberg, index membership from STOXX and S&P Capital IQ."
+    method: "Buy-and-hold abnormal returns over six to twelve months, cross-sectional regressions, and back-tests of rule-based index exclusion strategies."
+    findings: "Impaired firms underperform over medium horizons, particularly twelve months. Temporarily excluding them and rescaling the index outperforms the benchmark without increasing market risk, while substituting risk-free assets does not generate alpha."
+    links:
+      - label: "PDF"
+        url: "/files/Elias_Kuebler_MSc_Thesis.pdf"
 
 # Research projects (e.g. funded projects Elias works on).
 # Fields: title, label (small caption above the title), description, url (optional)
@@ -53,37 +65,8 @@ projects:
     description: "Funded by the German Research Foundation (DFG). Principal investigators: Christian Hofmann (LMU Munich) and Nina Schwaiger (TU Darmstadt)."
     url: "https://www.accounting-for-transparency.de/projects/transparency-regulation-and-organizational-design/"
 
-# Theses (same fields as papers)
-theses:
-  - title: "Turning Bad News into Alpha: Passive Exclusion Rules after Goodwill Impairments in the U.S. and Germany, 2005–2025"
-    coauthors: "Supervised by Dr. María de la O Hervás Zurita and Prof. Dr. Martin Hellmich"
-    status: "Master's thesis"
-    venue: "Frankfurt School of Finance & Management"
-    year: 2026
-    abstract: >
-      This thesis examines whether goodwill impairment announcements have
-      persistent capital market implications beyond short-term announcement
-      effects and whether such effects matter for passive index investors. Using
-      data on DAX and S&P 500 constituents from 2005 to 2025, the study documents
-      that firms announcing goodwill impairments exhibit negative abnormal
-      performance over medium-term horizons, particularly over twelve months,
-      even after excluding the immediate announcement window. Building on this
-      evidence, the thesis evaluates simple, rule-based passive exclusion
-      strategies. Temporarily removing goodwill-impaired firms from
-      index-tracking portfolios and proportionally rescaling remaining
-      constituents leads to systematic outperformance relative to the original
-      benchmarks, without increasing market risk. In contrast, substituting
-      impaired firms with risk-free assets improves risk characteristics but
-      does not generate positive alpha. Overall, the results indicate that
-      goodwill impairments represent a persistent source of return drag in
-      passive indices and that transparent exclusion rules can mitigate this
-      effect while preserving the passive nature of index investing.
-    links:
-      - label: "PDF"
-        url: "/files/Elias_Kuebler_MSc_Thesis.pdf"
-
 # Conference and seminar presentations.
-# Fields: title (optional), event, location, date (e.g. "June 2027"), url (optional)
+# Fields: title (optional), event, location, date (e.g. "October 2026"), url (optional)
 presentations:
   - title: "Overlapping Long-Term Incentives and the Lag in Strategic Realignment"
     event: "Doctoral Seminar"

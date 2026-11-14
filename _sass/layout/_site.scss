@@ -1,11 +1,18 @@
 /* ==========================================================================
    Site design: understated academic look
    Serif (Source Serif 4) for names and titles, Inter for text,
-   deep navy accent, generous white space.
+   deep navy accent, one consistent spacing scale.
    ========================================================================== */
 
 $site-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
 $site-sans: "Inter", -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+
+/* Spacing scale (rem): every vertical gap on the site uses one of these */
+$sp-1: 0.375rem;
+$sp-2: 0.75rem;
+$sp-3: 1.25rem;
+$sp-4: 2rem;
+$sp-5: 3rem;
 
 :root {
   --global-base-color: #1c3d5a;
@@ -17,8 +24,6 @@ $site-sans: "Inter", -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-se
   --global-masthead-link-color-hover: #1c3d5a;
   --global-border-color: #e6e8eb;
   --site-muted: #6b7480;
-  --site-faint: #f6f7f9;
-  --site-accent-soft: #e8eef4;
 }
 
 html {
@@ -59,6 +64,11 @@ a {
   letter-spacing: 0.01em;
 }
 
+/* Same weight in every state so the bar never shifts between pages */
+.masthead__menu-item a {
+  font-weight: 400 !important;
+}
+
 .masthead__menu-item--lg {
   padding-right: 1.5em;
 }
@@ -67,7 +77,7 @@ a {
   white-space: nowrap;
   font-family: $site-serif;
   font-size: 1.3em;
-  font-weight: 600;
+  font-weight: 600 !important;
   color: var(--global-text-color) !important;
   letter-spacing: 0;
 }
@@ -80,14 +90,12 @@ a {
 .masthead__menu-item.selected a,
 .masthead__menu-item.selected a:hover {
   color: var(--global-text-color);
-  font-weight: 500;
   border-bottom: 1px solid var(--global-text-color);
 }
 
 .masthead__menu-item--lg.selected a,
 .masthead__menu-item--lg.selected a:hover {
   border-bottom: 0;
-  font-weight: 600;
 }
 
 /* ---------- Sidebar ---------- */
@@ -145,11 +153,12 @@ a {
 /* ---------- Page body ---------- */
 
 .page__title {
+  margin: 0 0 $sp-4;
   font-family: $site-serif;
   font-weight: 600;
   font-size: 2em;
+  line-height: 1.15;
   letter-spacing: -0.01em;
-  margin-bottom: 1.25em;
 }
 
 .page__content {
@@ -157,26 +166,38 @@ a {
   font-size: 0.97em;
 
   p, li { color: var(--global-text-color); }
+
+  > p,
+  section > p {
+    margin: 0 0 $sp-3;
+  }
+
+  section {
+    margin-top: $sp-5;
+
+    &:first-child { margin-top: 0; }
+  }
 }
 
-.page__lead-note {
-  margin-bottom: 2.5em;
+.page__content .page__lead-note {
+  margin-bottom: $sp-4;
   color: var(--site-muted);
   font-size: 0.95em;
 }
 
-/* Section label: small caps-style heading with a hairline */
+/* Section label: small capitals with a single hairline */
 .page__content .section-label,
 .section-label {
   display: flex;
   align-items: center;
   gap: 1em;
-  margin: 3em 0 1.5em;
+  margin: 0 0 $sp-4;
   padding: 0;
   border: 0;
   font-family: $site-sans;
-  font-size: 0.72em;
+  font-size: 0.72rem;
   font-weight: 600;
+  line-height: 1;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--global-base-color);
@@ -189,142 +210,85 @@ a {
   }
 }
 
-.page__content > .section-label:first-child,
-.page__content > section:first-child .section-label {
-  margin-top: 0;
-}
-
-/* ---------- Papers ---------- */
+/* ---------- Papers and projects ---------- */
 
 .paper {
-  margin-bottom: 2.25em;
+  margin: 0 0 $sp-5;
 
   &:last-child { margin-bottom: 0; }
 }
 
-.paper__title {
-  margin: 0 0 0.3em;
+.page__content .paper__title {
+  margin: 0 0 $sp-1;
   font-family: $site-serif;
   font-size: 1.22em;
   font-weight: 600;
   line-height: 1.35;
   letter-spacing: -0.005em;
   color: var(--global-text-color);
+
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: var(--global-base-color); text-decoration: underline; }
 }
 
-.paper__authors,
-.paper__meta {
-  margin: 0 !important;
-  font-size: 0.9em;
-  color: var(--site-muted) !important;
+.page__content .paper__byline {
+  margin: 0 0 $sp-3;
+  font-size: 0.88em;
+  line-height: 1.6;
+  color: var(--site-muted);
 }
 
-.paper__meta {
-  margin-top: 0.35em !important;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5em;
+.paper__sep {
+  margin: 0 0.5em;
+  opacity: 0.6;
 }
 
-.tag {
-  display: inline-block;
-  padding: 0.15em 0.6em;
-  border-radius: 999px;
-  background: var(--site-accent-soft);
-  color: var(--global-base-color);
-  font-size: 0.78em;
+.paper__link {
   font-weight: 500;
-  letter-spacing: 0.02em;
 }
 
-.paper__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em;
-  margin-top: 0.85em;
+.page__content .paper__text {
+  margin: 0;
+  font-size: 0.92em;
+  color: var(--global-text-color);
 }
 
-.pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4em;
-  padding: 0.3em 0.85em;
-  border: 1px solid var(--global-border-color);
-  border-radius: 999px;
-  background: #fff;
-  color: var(--global-text-color) !important;
-  font-family: $site-sans;
-  font-size: 0.78em;
-  font-weight: 500;
-  line-height: 1.5;
-  text-decoration: none !important;
-  cursor: pointer;
-  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
-
-  &:hover {
-    border-color: var(--global-base-color);
-    color: var(--global-base-color) !important;
-  }
-
-  .pill__icon {
-    font-size: 0.85em;
-    transition: transform 0.2s ease;
-  }
-
-  &[aria-expanded="true"] {
-    background: var(--global-base-color);
-    border-color: var(--global-base-color);
-    color: #fff !important;
-
-    .pill__icon { transform: rotate(90deg); }
-  }
+.page__content .paper--project .paper__byline {
+  margin-bottom: $sp-2;
 }
 
-.paper__abstract {
-  margin-top: 0.9em;
-  padding: 0.9em 1.1em;
-  border-left: 2px solid var(--global-base-color);
-  background: var(--site-faint);
-  font-size: 0.9em;
-  line-height: 1.65;
+/* Structured summary: label column + text column */
+.paper__summary {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  column-gap: $sp-3;
+  row-gap: $sp-2;
+  margin: 0;
+  padding: $sp-3 0 0;
+  border-top: 1px solid var(--global-border-color);
 
-  p { margin: 0; }
-  p + p { margin-top: 0.75em; }
-}
-
-/* ---------- Projects ---------- */
-
-.project {
-  padding: 1.1em 1.3em;
-  border: 1px solid var(--global-border-color);
-  border-radius: 6px;
-  margin-bottom: 1em;
-
-  .project__label {
-    margin: 0 0 0.35em !important;
-    font-size: 0.72em;
+  dt {
+    margin: 0;
+    padding-top: 0.2em;
+    font-size: 0.68rem;
     font-weight: 600;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--site-muted) !important;
+    color: var(--site-muted);
   }
 
-  .project__title {
-    margin: 0 0 0.35em;
-    font-family: $site-serif;
-    font-size: 1.1em;
-    font-weight: 600;
-    line-height: 1.35;
-
-    a { text-decoration: none; }
-    a:hover { text-decoration: underline; }
+  dd {
+    margin: 0;
+    font-size: 0.92em;
+    line-height: 1.6;
   }
 
-  .project__text {
-    margin: 0 !important;
-    font-size: 0.88em;
-    color: var(--site-muted) !important;
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    row-gap: 0;
+
+    dt { margin-top: $sp-2; }
+    dt:first-child { margin-top: 0; }
   }
 }
 
@@ -336,34 +300,35 @@ a {
   list-style: none;
 }
 
-.dated-list__item {
+.page__content .dated-list__item {
   display: grid;
-  grid-template-columns: 8.5em 1fr;
-  gap: 1.25em;
-  padding: 0.9em 0;
+  grid-template-columns: 6.5rem 1fr;
+  column-gap: $sp-3;
+  margin: 0;
+  padding: $sp-3 0;
   border-top: 1px solid var(--global-border-color);
 
   &:first-child { border-top: 0; padding-top: 0; }
+  &:last-child { padding-bottom: 0; }
 
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
-    gap: 0.15em;
+    row-gap: 0.15em;
   }
 }
 
 .dated-list__date {
-  font-size: 0.82em;
-  font-weight: 500;
-  letter-spacing: 0.02em;
+  padding-top: 0.25em;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: var(--site-muted);
-  padding-top: 0.2em;
 }
 
-.dated-list__main {
-  p { margin: 0 !important; }
-}
+.page__content .dated-list__main p { margin: 0; }
 
-.dated-list__title {
+.page__content .dated-list__title {
   font-family: $site-serif;
   font-size: 1.08em;
   font-weight: 600;
@@ -371,17 +336,17 @@ a {
   color: var(--global-text-color);
 }
 
-.dated-list__note {
-  margin-top: 0.2em !important;
-  font-size: 0.85em;
-  font-style: italic;
-  color: var(--site-muted) !important;
+.page__content .dated-list__sub {
+  margin-top: 0.15em;
+  font-size: 0.88em;
+  color: var(--site-muted);
 }
 
-.dated-list__sub {
-  margin-top: 0.15em !important;
-  font-size: 0.88em;
-  color: var(--site-muted) !important;
+.page__content .dated-list__note {
+  margin-top: 0.15em;
+  font-size: 0.85em;
+  font-style: italic;
+  color: var(--site-muted);
 }
 
 /* ---------- CV ---------- */
@@ -402,4 +367,4 @@ a {
   &:hover { background: var(--global-link-color-hover); }
 }
 
-.muted { color: var(--site-muted) !important; }
+.page__content .muted { color: var(--site-muted); }

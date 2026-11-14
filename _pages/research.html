@@ -11,28 +11,28 @@ permalink: /research/
 {% if r.publications.size > 0 %}
 <section>
 <h2 class="section-label">Publications</h2>
-{% for e in r.publications %}{% include research-entry.html entry=e section="pub" index=forloop.index %}{% endfor %}
+{% for e in r.publications %}{% include research-entry.html entry=e %}{% endfor %}
 </section>
 {% endif %}
 
 {% if r.working_papers.size > 0 %}
 <section>
 <h2 class="section-label">Working Papers</h2>
-{% for e in r.working_papers %}{% include research-entry.html entry=e section="wp" index=forloop.index %}{% endfor %}
+{% for e in r.working_papers %}{% include research-entry.html entry=e %}{% endfor %}
 </section>
 {% endif %}
 
 {% if r.work_in_progress.size > 0 %}
 <section>
 <h2 class="section-label">Work in Progress</h2>
-{% for e in r.work_in_progress %}{% include research-entry.html entry=e section="wip" index=forloop.index %}{% endfor %}
+{% for e in r.work_in_progress %}{% include research-entry.html entry=e %}{% endfor %}
 </section>
 {% endif %}
 
 {% if r.theses.size > 0 %}
 <section>
 <h2 class="section-label">Master's Thesis</h2>
-{% for e in r.theses %}{% include research-entry.html entry=e section="thesis" index=forloop.index %}{% endfor %}
+{% for e in r.theses %}{% include research-entry.html entry=e %}{% endfor %}
 </section>
 {% endif %}
 
@@ -40,11 +40,11 @@ permalink: /research/
 <section>
 <h2 class="section-label">Research Projects</h2>
 {% for p in r.projects %}
-<div class="project">
-  {% if p.label %}<p class="project__label">{{ p.label }}</p>{% endif %}
-  <h3 class="project__title">{% if p.url %}<a href="{{ p.url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h3>
-  {% if p.description %}<p class="project__text">{{ p.description }}</p>{% endif %}
-</div>
+<article class="paper paper--project">
+  <h3 class="paper__title">{% if p.url %}<a href="{{ p.url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h3>
+  {% if p.label %}<p class="paper__byline">{{ p.label }}</p>{% endif %}
+  {% if p.description %}<p class="paper__text">{{ p.description }}</p>{% endif %}
+</article>
 {% endfor %}
 </section>
 {% endif %}
@@ -70,14 +70,3 @@ permalink: /research/
 {% if total == 0 %}
 <p class="muted">Working papers, publications and conference presentations will be listed here.</p>
 {% endif %}
-
-<script>
-  document.querySelectorAll('.js-abstract').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var panel = document.getElementById(btn.getAttribute('aria-controls'));
-      var open = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!open));
-      panel.hidden = open;
-    });
-  });
-</script>
