@@ -157,6 +157,13 @@ a {
   max-width: 42rem;
 }
 
+/* Breathing room after the last item on every page (there is no footer) */
+#main {
+  padding-bottom: 8rem;
+
+  @media (max-width: 600px) { padding-bottom: 5rem; }
+}
+
 .page__content .page__intro {
   margin: 0 0 $sp-5;
   font-family: $site-serif;
