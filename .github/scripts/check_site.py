@@ -16,7 +16,7 @@ site = Path(sys.argv[1])
 base_url = urlparse(sys.argv[2].rstrip("/") if len(sys.argv) > 2 else "")
 host, base = base_url.netloc, base_url.path
 
-REQUIRED = ["/", "/research/", "/cv/", "/writing/", "/404.html"]
+REQUIRED = ["/", "/research/", "/teaching/", "/cv/", "/writing/", "/404.html"]
 
 
 class Links(HTMLParser):

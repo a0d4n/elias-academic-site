@@ -1,0 +1,32 @@
+---
+title: "Teaching"
+permalink: /teaching/
+---
+{% comment %}
+  Content is maintained in _data/teaching.yml — edit that file, not this one.
+{% endcomment %}
+{% assign t = site.data.teaching %}
+
+{% if t.courses.size > 0 %}
+<h2>Courses</h2>
+{% for c in t.courses %}
+<div class="entry">
+  <p class="entry__title">{% if c.url %}<a href="{{ c.url }}">{{ c.course }}</a>{% else %}{{ c.course }}{% endif %}</p>
+  <p class="entry__meta">{% if c.level %}{{ c.level }} · {% endif %}{% if c.role %}{{ c.role }} · {% endif %}{% if c.institution %}{{ c.institution }} · {% endif %}{{ c.term }}</p>
+  {% if c.with %}<p class="entry__summary">With {{ c.with }}</p>{% endif %}
+</div>
+{% endfor %}
+{% endif %}
+
+{% if t.theses.size > 0 %}
+<h2>Theses</h2>
+<ul class="entry-list">
+{% for s in t.theses %}
+  <li>{% if s.url %}<a href="{{ s.url }}">{{ s.text }}</a>{% else %}{{ s.text }}{% endif %}</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% if t.courses.size == 0 and t.theses.size == 0 %}
+<p>Courses I teach will be listed here.</p>
+{% endif %}

@@ -14,6 +14,7 @@ All edits can be made in the GitHub website: open a file, click the pencil icon,
 | Sidebar: name, title, affiliation, links | `author:` block in `_config.yml` |
 | Profile photo | `images/Elias.jpg` (replace the file, keep the name) |
 | Research page | `_data/research.yml` |
+| Teaching page | `_data/teaching.yml` |
 | Writing page (articles, essays, commentary) | `_data/writing.yml` |
 | CV PDF | `files/Elias_Kuebler_CV.pdf` |
 | Navigation bar | `_data/navigation.yml` |
@@ -23,6 +24,8 @@ All edits can be made in the GitHub website: open a file, click the pencil icon,
 **Add a paper.** Open `_data/research.yml`. Under `working_papers:`, `work_in_progress:` or `publications:`, replace `[]` with an entry; the file contains a commented example showing every field. To attach a PDF, upload it to `files/` (**Add file → Upload files**) and link it as `/files/name.pdf`. Empty sections are hidden automatically.
 
 **Add a presentation or research project.** Same file, under `presentations:` (fields: `title`, `event`, `location`, `date`) or `projects:` (fields: `title`, `description`, `url`). When a work-in-progress paper becomes a working paper, move its entry from `work_in_progress:` to `working_papers:`.
+
+**Add a course.** Open `_data/teaching.yml` and add an entry under `courses:` with `course`, `term` and optionally `institution`, `level`, `role`, `with`.
 
 **Add an article or essay.** Open `_data/writing.yml` and add an entry with `title`, `outlet`, `date` (YYYY-MM-DD) and `url`. Entries are sorted newest first automatically.
 

@@ -1,0 +1,25 @@
+# ==========================================
+# TEACHING — shown on the Teaching page
+# ==========================================
+# Add one entry per course and semester; newest first.
+#
+# Fields (course and term are required):
+#   course:      course title
+#   term:        e.g. "Summer 2026" or "Winter 2026/27"
+#   institution: e.g. "LMU Munich School of Management"
+#   level:       optional, e.g. "Bachelor", "Master"
+#   role:        optional, e.g. "Teaching assistant", "Tutorials"
+#   with:        optional, co-instructors
+#   url:         optional link to the course page
+
+courses:
+  - course: "Controlling"
+    term: "Summer 2026"
+    institution: "LMU Munich School of Management"
+    with: "Prof. Dr. Christian Hofmann and Anna Kölle"
+
+# Thesis supervision or advising (shown under its own heading).
+# Fields: text (required), url (optional)
+theses:
+  - text: "Contact for bachelor's and master's theses on AI in Finance written in cooperation with Knorr-Bremse AG"
+    url: "https://www.som.lmu.de/iuc/en/teaching/theses/"
