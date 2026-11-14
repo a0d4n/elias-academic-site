@@ -152,6 +152,40 @@ a {
 
 /* ---------- Page body ---------- */
 
+/* Comfortable line length on wide screens */
+.page .page__inner-wrap {
+  max-width: 42rem;
+}
+
+.page__content .page__intro {
+  margin: 0 0 $sp-5;
+  font-family: $site-serif;
+  font-size: 1.35em;
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+  color: var(--global-text-color);
+
+  a { text-decoration-color: rgba(28, 61, 90, 0.3); }
+}
+
+.page__content .interest-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $sp-2;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin: 0;
+    padding: 0.3em 0.9em;
+    border: 1px solid var(--global-border-color);
+    border-radius: 999px;
+    font-size: 0.88em;
+    line-height: 1.5;
+  }
+}
+
 .page__title {
   margin: 0 0 $sp-4;
   font-family: $site-serif;
