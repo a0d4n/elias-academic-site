@@ -1,0 +1,81 @@
+/* ==========================================================================
+   Site-specific styles: understated academic look
+   ========================================================================== */
+
+.page__title {
+  margin-bottom: 1em;
+  font-weight: 600;
+}
+
+.page__content {
+  line-height: 1.7;
+
+  h2 {
+    margin-top: 2em;
+    margin-bottom: 0.75em;
+    padding-bottom: 0.3em;
+    font-size: 1.15em;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border-bottom: 1px solid var(--global-border-color);
+  }
+
+  h2:first-child {
+    margin-top: 0;
+  }
+}
+
+.page__lead-note {
+  margin-bottom: 2em;
+  font-style: italic;
+}
+
+/* Papers, articles and similar list entries */
+.entry {
+  margin-bottom: 1.75em;
+
+  p {
+    margin: 0;
+  }
+}
+
+.entry__title {
+  font-weight: 600;
+}
+
+.entry__meta,
+.entry__summary,
+.entry__links {
+  font-size: 0.9em;
+}
+
+.entry__meta {
+  margin-top: 0.15em;
+}
+
+.entry__links {
+  margin-top: 0.35em !important;
+}
+
+.entry__abstract {
+  margin-top: 0.4em;
+  font-size: 0.9em;
+
+  summary {
+    cursor: pointer;
+    color: var(--global-base-color);
+  }
+
+  p {
+    margin-top: 0.5em;
+  }
+}
+
+.entry-list li {
+  margin-bottom: 0.5em;
+}
+
+.btn--cv {
+  font-size: 0.9em;
+  padding: 0.6em 1.2em;
+}

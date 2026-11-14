@@ -1,0 +1,38 @@
+# ==========================================
+# RESEARCH — shown on the Research page
+# ==========================================
+# Each section is a list. A section that is empty ( [] ) is hidden.
+# To add an entry, replace [] with entries like the commented example.
+#
+# Fields (only "title" is required):
+#   title:     paper title
+#   coauthors: "with Jane Doe and John Smith"
+#   status:    e.g. "Working paper", "Revise & resubmit at …", journal name
+#   year:      2027
+#   abstract:  shown in a collapsible "Abstract" box
+#   links:     list of label/url pairs. A file you upload to /files/ is
+#              linked as /files/name.pdf; other links are full URLs.
+#
+# Example (remove the # signs to use it):
+# working_papers:
+#   - title: "Paper title"
+#     coauthors: "with First Coauthor"
+#     status: "Working paper"
+#     year: 2027
+#     abstract: >
+#       One-paragraph abstract.
+#     links:
+#       - label: "PDF"
+#         url: "/files/paper-name.pdf"
+#       - label: "SSRN"
+#         url: "https://papers.ssrn.com/..."
+
+working_papers: []
+
+work_in_progress: []
+
+publications: []
+
+# Conference and seminar presentations.
+# Fields: title (optional), event, location, date (e.g. "June 2027"), url (optional)
+presentations: []

@@ -1,0 +1,21 @@
+# ==========================================
+# POLITICAL OPINIONS — shown on the Political Opinions page
+# ==========================================
+# One entry per article, essay or commentary. Newest first is not required:
+# the page sorts entries by date automatically.
+#
+# Fields (title and date are required):
+#   title:   headline of the piece
+#   outlet:  where it appeared, e.g. "Frankfurter Allgemeine Zeitung"
+#   date:    YYYY-MM-DD
+#   url:     link to the piece. For a PDF uploaded to /files/, use /files/name.pdf
+#   summary: optional one-sentence description
+#
+# Example (remove the # signs to use it):
+# - title: "Headline of the piece"
+#   outlet: "Name of newspaper or blog"
+#   date: 2027-01-15
+#   url: "https://..."
+#   summary: "One sentence on what the piece argues."
+
+[]

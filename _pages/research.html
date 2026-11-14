@@ -1,0 +1,37 @@
+---
+title: "Research"
+permalink: /research/
+---
+{% comment %}
+  Content is maintained in _data/research.yml — edit that file, not this one.
+{% endcomment %}
+{% assign r = site.data.research %}
+{% assign total = r.working_papers.size | plus: r.work_in_progress.size | plus: r.publications.size | plus: r.presentations.size %}
+
+{% if r.publications.size > 0 %}
+<h2>Publications</h2>
+{% for e in r.publications %}{% include research-entry.html entry=e %}{% endfor %}
+{% endif %}
+
+{% if r.working_papers.size > 0 %}
+<h2>Working Papers</h2>
+{% for e in r.working_papers %}{% include research-entry.html entry=e %}{% endfor %}
+{% endif %}
+
+{% if r.work_in_progress.size > 0 %}
+<h2>Work in Progress</h2>
+{% for e in r.work_in_progress %}{% include research-entry.html entry=e %}{% endfor %}
+{% endif %}
+
+{% if r.presentations.size > 0 %}
+<h2>Presentations</h2>
+<ul class="entry-list">
+{% for p in r.presentations %}
+  <li>{% if p.title %}<em>{{ p.title }}</em>, {% endif %}{% if p.url %}<a href="{{ p.url }}">{{ p.event }}</a>{% else %}{{ p.event }}{% endif %}{% if p.location %}, {{ p.location }}{% endif %}{% if p.date %} ({{ p.date }}){% endif %}</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% if total == 0 %}
+<p>Working papers, publications and conference presentations will be listed here.</p>
+{% endif %}

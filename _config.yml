@@ -1,7 +1,8 @@
-
 # ==========================================
 # ELIAS KÜBLER — ACADEMIC WEBSITE
 # ==========================================
+# Changes to this file need a fresh build: just commit, and GitHub
+# Actions rebuilds the site within about a minute.
 
 # Website
 locale: "en-US"
@@ -9,9 +10,14 @@ site_theme: "default"
 title: "Elias Kübler"
 title_separator: "-"
 name: "Elias Kübler"
-description: "Academic website of Elias Kübler"
+description: "Academic website of Elias Kübler, doctoral candidate at LMU Munich."
+og_image: "Elias.jpg"   # picture shown when the site is shared as a link
+cv_file: "Elias_Kuebler_CV.pdf"   # CV PDF stored in /files/
 
 # Hosting
+# If the repository moves to another account or is renamed, update these
+# three lines. For a repository named <username>.github.io, use
+#   url: "https://<username>.github.io"  and  baseurl: ""
 url: "https://a0d4n.github.io"
 baseurl: "/elias-academic-site"
 repository: "a0d4n/elias-academic-site"
@@ -21,14 +27,14 @@ repository: "a0d4n/elias-academic-site"
 # ==========================================
 
 author:
-  avatar: "Elias.jpg"
+  avatar: "Elias.jpg"          # file in /images/
   name: "Elias Kübler"
   bio: "Doctoral Candidate"
-  location: "Munich, Germany"
   employer: "LMU Munich"
+  location: "Munich, Germany"
   uri: "https://www.som.lmu.de/iuc/en/persons/contact-page/elias-kuebler-94d4e20e.html"
   email: "elias.kuebler@lmu.de"
-  linkedin: "elias-kuebler"
+  linkedin: "elias-kuebler"     # the part after linkedin.com/in/
 
 # ==========================================
 # WEBSITE CONTENT
@@ -40,50 +46,26 @@ include:
 
 exclude:
   - .github
+  - .devcontainer
   - node_modules
   - vendor
   - Gemfile
   - Gemfile.lock
   - README.md
+  - AGENTS.md
+  - LICENSE
   - CHANGELOG
   - Dockerfile
+  - docker-compose.yaml
+  - _config_docker.yml
   - package.json
   - package-lock.json
-
-# Academic content collections
-collections:
-  publications:
-    output: true
-    permalink: /:collection/:path/
-  talks:
-    output: true
-    permalink: /:collection/:path/
-  teaching:
-    output: true
-    permalink: /:collection/:path/
-  portfolio:
-    output: true
-    permalink: /:collection/:path/
 
 # Page formatting
 defaults:
   - scope:
       path: ""
       type: pages
-    values:
-      layout: single
-      author_profile: true
-
-  - scope:
-      path: ""
-      type: publications
-    values:
-      layout: single
-      author_profile: true
-
-  - scope:
-      path: ""
-      type: talks
     values:
       layout: single
       author_profile: true
@@ -96,24 +78,18 @@ markdown: kramdown
 highlighter: rouge
 encoding: "utf-8"
 timezone: "Europe/Berlin"
-permalink: /:categories/:title/
+
+atom_feed:
+  hide: true
 
 sass:
   sass_dir: _sass
   style: compressed
 
 plugins:
-  - jekyll-feed
-  - jekyll-gist
-  - jekyll-paginate
   - jekyll-sitemap
   - jekyll-redirect-from
-  - jemoji
 
 whitelist:
-  - jekyll-feed
-  - jekyll-gist
-  - jekyll-paginate
   - jekyll-sitemap
   - jekyll-redirect-from
-  - jemoji

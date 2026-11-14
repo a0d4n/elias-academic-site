@@ -215,6 +215,17 @@
 
   @include breakpoint($large) {
     margin-top: 10px;
+    margin-bottom: 6px;
+  }
+}
+
+.author__affiliation {
+  margin: 4px 0 0;
+  font-size: 0.9em;
+  line-height: 1.4;
+
+  @include breakpoint($large) {
+    margin-top: 0;
     margin-bottom: 20px;
   }
 }

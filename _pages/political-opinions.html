@@ -1,0 +1,25 @@
+---
+title: "Political Opinions"
+permalink: /political-opinions/
+---
+{% comment %}
+  Content is maintained in _data/opinions.yml — edit that file, not this one.
+{% endcomment %}
+{% include base_path %}
+<p class="page__lead-note">Articles, essays and commentary on politics and public affairs. These pieces reflect my personal views and are separate from my academic research.</p>
+
+{% assign pieces = site.data.opinions | sort: "date" | reverse %}
+{% if pieces.size > 0 %}
+<div class="opinions">
+{% for p in pieces %}
+  {% if p.url contains "://" %}{% assign href = p.url %}{% elsif p.url %}{% assign href = p.url | prepend: base_path %}{% else %}{% assign href = nil %}{% endif %}
+  <div class="entry">
+    <p class="entry__title">{% if href %}<a href="{{ href }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</p>
+    <p class="entry__meta">{% if p.outlet %}<em>{{ p.outlet }}</em> · {% endif %}{{ p.date | date: "%B %Y" }}</p>
+    {% if p.summary %}<p class="entry__summary">{{ p.summary }}</p>{% endif %}
+  </div>
+{% endfor %}
+</div>
+{% else %}
+<p>No pieces have been published here yet.</p>
+{% endif %}

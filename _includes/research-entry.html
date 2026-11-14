@@ -1,0 +1,19 @@
+{% include base_path %}
+{% assign e = include.entry %}
+<div class="entry">
+  <p class="entry__title">{{ e.title }}</p>
+  {% capture meta %}{% if e.coauthors %}{{ e.coauthors }}{% endif %}{% if e.status %}{% if e.coauthors %} · {% endif %}<em>{{ e.status }}</em>{% endif %}{% if e.year %}{% if e.coauthors or e.status %} · {% endif %}{{ e.year }}{% endif %}{% endcapture %}
+  {% assign meta = meta | strip %}
+  {% if meta != "" %}<p class="entry__meta">{{ meta }}</p>{% endif %}
+  {% if e.abstract %}
+    <details class="entry__abstract">
+      <summary>Abstract</summary>
+      {{ e.abstract | markdownify }}
+    </details>
+  {% endif %}
+  {% if e.links %}
+    <p class="entry__links">
+      {% for l in e.links %}{% if l.url contains "://" %}{% assign href = l.url %}{% else %}{% assign href = l.url | prepend: base_path %}{% endif %}<a href="{{ href }}">{{ l.label }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}
+    </p>
+  {% endif %}
+</div>
