@@ -29,10 +29,32 @@
 
 working_papers: []
 
-work_in_progress: []
+work_in_progress:
+  - title: "Overlapping Long-Term Incentives and the Lag in Strategic Realignment"
+    coauthors: "with Karl Kappen"
+    abstract: >
+      Executives typically receive a new multi-year long-term incentive (LTI)
+      tranche every year, so several tranches with different performance
+      criteria are outstanding at the same time. Because existing tranches are
+      not rewritten after a strategic change, legacy tranches continue to reward
+      the old objectives. We model how these outstanding tranches delay the
+      realignment of managerial effort towards a new strategy, a Strategic
+      Incentive Lag, and plan to test the predictions using § 162 AktG
+      remuneration reports of DAX, MDAX and SDAX firms.
 
 publications: []
 
+# Research projects (e.g. funded projects Elias works on).
+# Fields: title, description, url (optional)
+projects:
+  - title: "Transparency Regulation and Organizational Design"
+    description: "Project B03 of TRR 266 Accounting for Transparency, funded by the German Research Foundation (DFG). Principal investigators: Christian Hofmann (LMU Munich) and Nina Schwaiger (TU Darmstadt)."
+    url: "https://www.accounting-for-transparency.de/projects/transparency-regulation-and-organizational-design/"
+
 # Conference and seminar presentations.
 # Fields: title (optional), event, location, date (e.g. "June 2027"), url (optional)
-presentations: []
+presentations:
+  - title: "Overlapping Long-Term Incentives and the Lag in Strategic Realignment"
+    event: "Doctoral Seminar"
+    location: "St. Johann in Tirol, Austria"
+    date: "October 2026"

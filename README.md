@@ -22,7 +22,7 @@ All edits can be made in the GitHub website: open a file, click the pencil icon,
 
 **Add a paper.** Open `_data/research.yml`. Under `working_papers:`, `work_in_progress:` or `publications:`, replace `[]` with an entry; the file contains a commented example showing every field. To attach a PDF, upload it to `files/` (**Add file → Upload files**) and link it as `/files/name.pdf`. Empty sections are hidden automatically.
 
-**Add a presentation.** Same file, under `presentations:` (fields: `title`, `event`, `location`, `date`).
+**Add a presentation or research project.** Same file, under `presentations:` (fields: `title`, `event`, `location`, `date`) or `projects:` (fields: `title`, `description`, `url`). When a work-in-progress paper becomes a working paper, move its entry from `work_in_progress:` to `working_papers:`.
 
 **Add an opinion piece.** Open `_data/opinions.yml` and add an entry with `title`, `outlet`, `date` (YYYY-MM-DD) and `url`. Entries are sorted newest first automatically.
 
