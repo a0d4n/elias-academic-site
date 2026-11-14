@@ -5,7 +5,7 @@ permalink: /
 author_profile: true
 ---
 
-I am a doctoral candidate at the Institute for Accounting and Control at LMU Munich and a member of [TRR 266 Accounting for Transparency](https://www.accounting-for-transparency.de/).
+I am a doctoral candidate at the Institute for Accounting and Control (Prof. Dr. Christian Hofmann) at LMU Munich and a member of [TRR 266 Accounting for Transparency](https://www.accounting-for-transparency.de/).
 
 My research interests include corporate governance, sustainability, corporate disclosure, and capital markets.
 

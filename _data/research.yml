@@ -54,6 +54,7 @@ projects:
 # Theses (same fields as papers)
 theses:
   - title: "Turning Bad News into Alpha: Passive Exclusion Rules after Goodwill Impairments in the U.S. and Germany, 2005–2025"
+    coauthors: "Supervised by Dr. María de la O Hervás Zurita and Prof. Dr. Martin Hellmich"
     status: "Master's thesis, Frankfurt School of Finance & Management"
     year: 2026
     abstract: >
