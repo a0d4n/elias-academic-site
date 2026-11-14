@@ -9,4 +9,4 @@ I am a doctoral candidate at the Institute for Accounting and Control at LMU Mun
 
 My research interests include corporate governance, sustainability, corporate disclosure, and capital markets.
 
-Before joining LMU, I completed an MSc in Finance and a BSc in Business Administration at Frankfurt School of Finance & Management.
+Before joining LMU, I completed an MSc in Finance and a BSc in Business Administration at Frankfurt School of Finance & Management. Alongside my studies, I gained professional experience in capital markets and asset management at Deutsche Börse, Metzler Asset Management and Baader Bank.
