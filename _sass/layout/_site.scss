@@ -273,6 +273,18 @@ a {
   color: var(--site-muted);
 }
 
+.page__content .paper__byline--lead {
+  margin-bottom: 0;
+}
+
+.page__content .paper__byline--lead + .paper__byline {
+  margin-top: 0.1em;
+}
+
+.page__content .paper__byline--lead:last-of-type {
+  margin-bottom: $sp-3;
+}
+
 .paper__sep {
   margin: 0 0.5em;
   opacity: 0.6;
@@ -296,6 +308,13 @@ a {
 
 .page__content .paper--project .paper__byline {
   margin-bottom: $sp-2;
+}
+
+/* Abstract: plain body text under the byline */
+.page__content .paper__abstract p {
+  margin: 0;
+  font-size: $fs-body;
+  line-height: 1.7;
 }
 
 /* Structured summary: label column + text column */
@@ -343,7 +362,7 @@ a {
 
 .page__content .dated-list__item {
   display: grid;
-  grid-template-columns: 6.5rem 1fr;
+  grid-template-columns: 8rem 1fr;
   column-gap: $sp-3;
   margin: 0;
   padding: $sp-3 0;

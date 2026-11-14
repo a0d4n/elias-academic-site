@@ -1,7 +1,9 @@
 {% include base_path %}{% assign e = include.entry %}
 <article class="paper">
   <h3 class="paper__title">{{ e.title }}</h3>
-  <p class="paper__byline">{% if e.coauthors %}<span>{{ e.coauthors }}</span>{% endif %}{% if e.status or e.venue or e.year %}{% if e.coauthors %}<span class="paper__sep" aria-hidden="true">·</span>{% endif %}<span>{% if e.status %}{{ e.status }}{% if e.venue or e.year %}, {% endif %}{% endif %}{{ e.venue }}{% if e.venue and e.year %}, {% endif %}{{ e.year }}</span>{% endif %}{% for l in e.links %}{% if l.url contains "://" %}{% assign href = l.url %}{% else %}{% assign href = l.url | prepend: base_path %}{% endif %}<span class="paper__sep" aria-hidden="true">·</span><a class="paper__link" href="{{ href }}">{{ l.label }}</a>{% endfor %}</p>
+  {% if e.coauthors %}<p class="paper__byline paper__byline--lead">{{ e.coauthors }}</p>{% endif %}
+  {% if e.status or e.venue or e.year or e.links %}<p class="paper__byline">{% if e.status or e.venue or e.year %}<span>{% if e.status %}{{ e.status }}{% if e.venue or e.year %}, {% endif %}{% endif %}{{ e.venue }}{% if e.venue and e.year %}, {% endif %}{{ e.year }}</span>{% endif %}{% for l in e.links %}{% if l.url contains "://" %}{% assign href = l.url %}{% else %}{% assign href = l.url | prepend: base_path %}{% endif %}{% if forloop.first == false or e.status or e.venue or e.year %}<span class="paper__sep" aria-hidden="true">·</span>{% endif %}<a class="paper__link" href="{{ href }}">{{ l.label }}</a>{% endfor %}</p>{% endif %}
+  {% if e.abstract %}<div class="paper__abstract">{{ e.abstract | markdownify }}</div>{% endif %}
   {% if e.question or e.literature or e.data or e.method or e.findings %}
   <dl class="paper__summary">
     {% if e.question %}<dt>Question</dt><dd>{{ e.question }}</dd>{% endif %}

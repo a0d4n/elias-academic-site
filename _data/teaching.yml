@@ -21,7 +21,7 @@ courses:
 # Thesis supervision (shown under its own heading).
 # Fields: text (required), links (optional list of label/url pairs)
 theses:
-  - text: "Supervision of bachelor's and master's theses at the Institute for Accounting and Control, in the institute's research areas, including executive compensation, corporate governance, sustainability (ESG) and transparency regulation."
+  - text: "Supervision of bachelor's and master's theses at the Institute for Accounting and Control."
     links:
       - label: "Application process"
         url: "https://www.som.lmu.de/iuc/en/teaching/theses/"

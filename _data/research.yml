@@ -9,11 +9,7 @@
 #   status:     e.g. "Revise & resubmit", "Master's thesis"
 #   venue:      journal, institution or series
 #   year:       2027
-#   question:   research question, one sentence
-#   literature: literature it builds on, one sentence
-#   data:       data used, one sentence
-#   method:     methodology, one sentence
-#   findings:   main findings, one or two sentences
+#   abstract:   short abstract, two or three sentences
 #   links:      list of label/url pairs. Files uploaded to /files/ are
 #               linked as /files/name.pdf; other links are full URLs.
 #
@@ -21,10 +17,8 @@
 # working_papers:
 #   - title: "Paper title"
 #     coauthors: "with First Coauthor"
-#     question: "…"
-#     data: "…"
-#     method: "…"
-#     findings: "…"
+#     abstract: >
+#       Two or three sentences on the question, approach and main result.
 #     links:
 #       - label: "SSRN"
 #         url: "https://papers.ssrn.com/..."
@@ -36,11 +30,13 @@ working_papers: []
 work_in_progress:
   - title: "Overlapping Long-Term Incentives and the Lag in Strategic Realignment"
     coauthors: "with Karl Kappen"
-    question: "How do legacy long-term incentive (LTI) tranches that are still outstanding delay the realignment of managerial effort after a strategic change?"
-    literature: "Agency theory and incentive contracting; the duration and vesting of executive pay."
-    data: "German remuneration reports under § 162 AktG for DAX, MDAX and SDAX firms around strategic changes (planned)."
-    method: "Present-value model of how executives allocate effort across overlapping LTI tranches, with simulations of behavioural and governance frictions."
-    findings: "Preliminary simulations: overlapping tranches delay the shift of effort to a new strategy, and the lag grows with tranche length and with frictions such as noisier new performance metrics."
+    abstract: >
+      Executives receive a new multi-year long-term incentive tranche every
+      year, so several tranches with different performance criteria run at the
+      same time. When strategy changes, the legacy tranches keep rewarding the
+      old goals. We model how this overlap delays the shift of managerial effort
+      to the new strategy, a Strategic Incentive Lag, and show in simulations
+      that the lag grows with tranche length and with contracting frictions.
 
 theses:
   - title: "Turning Bad News into Alpha: Passive Exclusion Rules after Goodwill Impairments in the U.S. and Germany, 2005–2025"
@@ -48,11 +44,13 @@ theses:
     status: "Master's thesis"
     venue: "Frankfurt School of Finance & Management"
     year: 2026
-    question: "Do goodwill impairment announcements have persistent capital market effects beyond the announcement window, and do these matter for passive index investors?"
-    literature: "Market efficiency and long-horizon event studies; goodwill impairment accounting under IAS 36 and U.S. GAAP."
-    data: "DAX and S&P 500 constituents, 2005–2025; impairment announcements and returns from Bloomberg, index membership from STOXX and S&P Capital IQ."
-    method: "Buy-and-hold abnormal returns over six to twelve months, cross-sectional regressions, and back-tests of rule-based index exclusion strategies."
-    findings: "Impaired firms underperform over medium horizons, particularly twelve months. Temporarily excluding them and rescaling the index outperforms the benchmark without increasing market risk, while substituting risk-free assets does not generate alpha."
+    abstract: >
+      Firms in the DAX and the S&P 500 that announce goodwill impairments
+      underperform over the following six to twelve months, beyond the initial
+      announcement reaction (2005–2025). A simple passive rule that temporarily
+      excludes these firms and rescales the index outperforms the benchmark
+      without increasing market risk, while replacing them with risk-free assets
+      does not generate alpha.
     links:
       - label: "PDF"
         url: "/files/Elias_Kuebler_MSc_Thesis.pdf"
